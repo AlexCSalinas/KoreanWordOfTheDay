@@ -80,7 +80,7 @@ jobs:
       - name: Create Today's PR
         run: |
           REPO_FULLNAME="${{ github.repository }}"
-          PR_TITLE="Korean Word of the Day (${{ env.TODAY }}): ${{ env.KOREAN_WORD }} (${{ env.MEANING }})"
+          PR_TITLE="(${{ env.TODAY }}): ${{ env.KOREAN_WORD }} (${{ env.MEANING }})"
           PR_BODY="Learn a new Korean word today: **${{ env.KOREAN_WORD }}** - ${{ env.MEANING }}"
           
           echo "Creating PR with title: $PR_TITLE"
