@@ -9,7 +9,11 @@ jobs:
   create-word-pr:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          # Use PAT instead of GITHUB_TOKEN
+          token: ${{ secrets.PAT_GITHUB }}
       
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -17,7 +21,6 @@ jobs:
           python-version: '3.10'
           
       - name: Fetch Korean word of the day
-        id: fetch-word
         run: |
           python .github/scripts/get_korean_word.py
           echo "KOREAN_WORD=$(cat korean_word.txt)" >> $GITHUB_ENV
@@ -25,8 +28,8 @@ jobs:
         
       - name: Create new branch
         run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           today=$(date +%Y-%m-%d)
           git checkout -b word-of-the-day-$today
           
@@ -35,45 +38,55 @@ jobs:
           echo "${{ env.KOREAN_WORD }} - ${{ env.MEANING }}" > current_word.md
           git add current_word.md
           git commit -m "Update Korean word of the day"
-          git push origin word-of-the-day-$(date +%Y-%m-%d)
+          # Push using PAT authentication
+          git push -f https://${{ secrets.PAT_GITHUB }}@github.com/${{ github.repository }}.git HEAD:word-of-the-day-$(date +%Y-%m-%d)
           
+      # Create PR using curl instead of GitHub Actions
+      - name: Create PR
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          PR_TITLE="Korean Word of the Day: ${{ env.KOREAN_WORD }} (${{ env.MEANING }})"
+          PR_BODY="Learn a new Korean word today: **${{ env.KOREAN_WORD }}** - ${{ env.MEANING }}"
+          
+          # Extract owner and repo name
+          REPO_FULLNAME="${{ github.repository }}"
+          
+          # Create PR using GitHub API with PAT authentication
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.PAT_GITHUB }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/$REPO_FULLNAME/pulls \
+            -d '{
+              "title": "'"$PR_TITLE"'",
+              "body": "'"$PR_BODY"'",
+              "head": "word-of-the-day-'"$TODAY"'",
+              "base": "main"
+            }'
+            
+      # Close previous PRs
       - name: Close previous PRs
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const { owner, repo } = context.repo;
-            const prs = await github.rest.pulls.list({
-              owner,
-              repo,
-              state: 'open'
-            });
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          REPO_FULLNAME="${{ github.repository }}"
+          
+          # Get list of open PRs
+          PR_LIST=$(curl -s -H "Authorization: token ${{ secrets.PAT_GITHUB }}" \
+                     -H "Accept: application/vnd.github.v3+json" \
+                     https://api.github.com/repos/$REPO_FULLNAME/pulls?state=open)
+          
+          # Loop through PRs and close the ones that aren't today's
+          echo "$PR_LIST" | jq -c '.[]' | while read PR; do
+            PR_NUMBER=$(echo "$PR" | jq -r '.number')
+            PR_TITLE=$(echo "$PR" | jq -r '.title')
             
-            const today = new Date().toISOString().split('T')[0];
-            
-            for (const pr of prs.data) {
-              if (!pr.title.includes(today) && pr.title.includes('Korean Word of the Day')) {
-                await github.rest.pulls.update({
-                  owner,
-                  repo,
-                  pull_number: pr.number,
-                  state: 'closed'
-                });
-              }
-            }
-            
-      - name: Create new PR
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const { owner, repo } = context.repo;
-            
-            await github.rest.pulls.create({
-              owner,
-              repo,
-              title: `Korean Word of the Day: ${process.env.KOREAN_WORD} (${process.env.MEANING})`,
-              body: `Learn a new Korean word today: **${process.env.KOREAN_WORD}** - ${process.env.MEANING}`,
-              head: `word-of-the-day-${new Date().toISOString().split('T')[0]}`,
-              base: 'main'
-            });
+            # If PR title contains "Korean Word of the Day" but not today's date
+            if [[ "$PR_TITLE" == *"Korean Word of the Day"* && "$PR_TITLE" != *"$TODAY"* ]]; then
+              echo "Closing PR #$PR_NUMBER: $PR_TITLE"
+              
+              curl -X PATCH \
+                -H "Authorization: token ${{ secrets.PAT_GITHUB }}" \
+                -H "Accept: application/vnd.github.v3+json" \
+                https://api.github.com/repos/$REPO_FULLNAME/pulls/$PR_NUMBER \
+                -d '{"state": "closed"}'
+            fi
+          done
