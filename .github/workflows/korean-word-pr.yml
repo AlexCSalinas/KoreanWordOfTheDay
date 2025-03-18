@@ -62,8 +62,9 @@ jobs:
             
             echo "Checking PR #$PR_NUMBER: $PR_TITLE (created: $PR_CREATED_AT)"
             
-            # Only close if it's a Korean Word PR but NOT containing today's date
-            if [[ "$PR_TITLE" == *"Korean Word of the Day"* && "$PR_TITLE" != *"${{ env.TODAY }}"* ]]; then
+            # Only close if it's NOT a PR from today (check branch name rather than title)
+            PR_HEAD_REF=$(echo "$PR" | jq -r '.head.ref')
+            if [[ "$PR_HEAD_REF" != *"${{ env.TODAY }}"* ]]; then
               echo "Closing PR #$PR_NUMBER because it's not today's PR"
               
               curl -X PATCH \
@@ -80,7 +81,8 @@ jobs:
       - name: Create Today's PR
         run: |
           REPO_FULLNAME="${{ github.repository }}"
-          PR_TITLE="(${{ env.TODAY }}): ${{ env.KOREAN_WORD }} (${{ env.MEANING }})"
+          # Use a much shorter title format
+          PR_TITLE="${{ env.KOREAN_WORD }} - ${{ env.TODAY }}"
           PR_BODY="Learn a new Korean word today: **${{ env.KOREAN_WORD }}** - ${{ env.MEANING }}"
           
           echo "Creating PR with title: $PR_TITLE"
