@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+분명히 - Clearly
+Date: 2025-03-21
