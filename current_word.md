@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+친구 - Friend
+Date: 2025-03-22
