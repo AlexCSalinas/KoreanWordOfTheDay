@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+작다 - Small
+Date: 2025-03-27
