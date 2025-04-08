@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+쓰다 - To write
+Date: 2025-04-08
