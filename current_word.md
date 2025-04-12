@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+미소 - Smile
+Date: 2025-04-12
