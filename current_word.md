@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+빛 - Light
+Date: 2025-04-13
