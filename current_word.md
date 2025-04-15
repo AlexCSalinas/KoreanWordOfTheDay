@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+잃다 - To lose
+Date: 2025-04-15
