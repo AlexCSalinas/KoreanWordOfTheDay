@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+가다 - To go
+Date: 2025-04-16
