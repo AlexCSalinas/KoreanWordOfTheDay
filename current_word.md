@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+얇다 - Thin (object)
+Date: 2025-04-19
