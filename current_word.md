@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+팔다 - To sell
+Date: 2025-04-20
