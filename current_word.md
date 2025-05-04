@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+읽다 - To read
+Date: 2025-05-04
