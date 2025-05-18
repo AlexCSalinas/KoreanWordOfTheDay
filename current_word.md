@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+받아들이다 - To accept
+Date: 2025-05-18
