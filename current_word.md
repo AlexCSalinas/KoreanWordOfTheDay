@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+공부 - Study
+Date: 2025-05-29
