@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+절대로 - Never/Absolutely
+Date: 2025-06-02
