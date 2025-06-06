@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+연필 - Pencil
+Date: 2025-06-06
