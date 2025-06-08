@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+일하다 - To work
+Date: 2025-06-08
