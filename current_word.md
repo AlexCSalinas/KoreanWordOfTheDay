@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+자다 - To sleep
+Date: 2025-06-11
