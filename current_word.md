@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+전혀 - Not at all
+Date: 2025-06-15
