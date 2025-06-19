@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+고기 - Meat
+Date: 2025-06-19
