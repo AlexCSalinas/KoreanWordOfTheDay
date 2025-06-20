@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+빠르다 - Fast
+Date: 2025-06-20
