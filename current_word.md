@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+사다 - To buy
+Date: 2025-06-24
