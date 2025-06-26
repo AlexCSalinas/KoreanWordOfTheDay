@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+걷다 - To walk
+Date: 2025-06-26
