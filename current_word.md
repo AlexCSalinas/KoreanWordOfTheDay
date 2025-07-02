@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+비행기 - Airplane
+Date: 2025-07-02
