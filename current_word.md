@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+받다 - To receive
+Date: 2025-07-06
