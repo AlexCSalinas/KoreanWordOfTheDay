@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+우유 - Milk
+Date: 2025-07-10
