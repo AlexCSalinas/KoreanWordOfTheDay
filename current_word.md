@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+많다 - Many/Much
+Date: 2025-07-14
