@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+일어나다 - To wake up
+Date: 2025-07-24
