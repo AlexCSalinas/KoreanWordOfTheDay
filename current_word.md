@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+특히 - Especially
+Date: 2025-07-27
