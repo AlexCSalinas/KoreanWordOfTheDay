@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+마르다 - Thin/Skinny (person)
+Date: 2025-07-31
