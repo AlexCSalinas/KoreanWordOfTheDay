@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+쉬다 - To rest
+Date: 2025-08-01
