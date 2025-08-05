@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+완전히 - Completely
+Date: 2025-08-05
