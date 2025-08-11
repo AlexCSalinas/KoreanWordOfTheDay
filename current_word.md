@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+가끔 - Sometimes
+Date: 2025-08-11
