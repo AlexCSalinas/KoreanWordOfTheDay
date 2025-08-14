@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+거절하다 - To refuse
+Date: 2025-08-14
