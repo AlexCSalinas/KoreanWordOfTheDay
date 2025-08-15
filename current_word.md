@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+무겁다 - Heavy
+Date: 2025-08-15
