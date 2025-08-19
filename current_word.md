@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+입다 - To wear
+Date: 2025-08-19
