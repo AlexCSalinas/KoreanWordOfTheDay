@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+뛰다 - To run
+Date: 2025-08-23
