@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+시작하다 - To start
+Date: 2025-08-25
