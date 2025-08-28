@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+닫다 - To close
+Date: 2025-08-28
