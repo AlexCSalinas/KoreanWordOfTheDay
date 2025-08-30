@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+좋아하다 - To like
+Date: 2025-08-30
