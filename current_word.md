@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+피곤하다 - Tired
+Date: 2025-09-01
