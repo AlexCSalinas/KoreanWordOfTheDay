@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+주다 - To give
+Date: 2025-09-05
