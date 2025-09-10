@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+가르치다 - To teach
+Date: 2025-09-10
