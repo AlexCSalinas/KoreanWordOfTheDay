@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+알다 - To know
+Date: 2025-09-13
