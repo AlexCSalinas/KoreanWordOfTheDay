@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+요리하다 - To cook
+Date: 2025-09-20
