@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+웃음 - Laughter
+Date: 2025-09-24
