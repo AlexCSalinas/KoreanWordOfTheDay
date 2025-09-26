@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+오다 - To come
+Date: 2025-09-26
