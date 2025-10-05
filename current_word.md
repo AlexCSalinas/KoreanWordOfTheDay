@@ -1,2 +1,2 @@
-언어 - Language
-Date: 2025-03-18
+주로 - Mainly
+Date: 2025-10-05
